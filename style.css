@@ -12,11 +12,15 @@ body {
     min-height: 100vh;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.6);
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* This keeps the logo on the left and everything else to the right */
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -24,14 +28,16 @@ header {
     z-index: 1000;
 }
 
+
 .nav-links {
     list-style-type: none;
     display: flex;
-    justify-content: flex-end; /* Pushes the links to the right */
-    margin-right: 20px; /* Adds some spacing to the right of the navbar */
+    justify-content: flex-end;
+    margin-right: 20px;
 }
 
 .nav-links li {
+    position: relative; /* Important for the dropdown */
     margin-left: 20px;
 }
 
@@ -39,14 +45,47 @@ header {
     text-decoration: none;
     color: white;
     font-size: 1em;
+    display: flex; /* Flex display to align the icon with the text */
+    align-items: center;
 }
 
-/* Adjusting the layout to push "Contact Us" button to the right of the navbar */
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+/* Styling for the Font Awesome icon (arrow) */
+.nav-links a i {
+    margin-left: 8px; /* Add some space between the text and icon */
+}
+
+/* Dropdown styling */
+.services:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    top: 40px; /* Adjust based on the height of the nav bar */
+    background-color: rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown li {
+    margin: 0;
+    width: 200px; /* Width of the dropdown items */
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.dropdown a:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Highlight on hover */
 }
 
 .contact-btn {
@@ -75,19 +114,21 @@ nav {
 }
 
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: cover;
     padding: 20px;
     border-radius: 10px;
-    width: 60%;
+    width: 80%;
+    height: 80%;
 }
 
 .hero h2 {
-    font-size: 3em;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.5em;
+    font-size: 25px;
     margin-bottom: 30px;
 }
 
